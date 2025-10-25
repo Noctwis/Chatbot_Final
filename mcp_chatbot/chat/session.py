@@ -4,7 +4,7 @@ import re
 from dataclasses import dataclass
 from typing import Any, AsyncGenerator, Dict, List, Optional, Tuple, Union
 
-#import colorama
+import colorama
 
 from ..llm.oai import OpenAIClient as LLMClient
 from ..mcp import MCPClient
