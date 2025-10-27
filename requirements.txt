@@ -4,3 +4,4 @@ colorama
 openai
 requests
 streamlit
+transformers
