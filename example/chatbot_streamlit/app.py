@@ -9,6 +9,9 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import streamlit as st
 
+from transformers import GPT2Tokenizer, TFGPT2Model
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+
 if sys.platform == "win32":
     # The default event loop policy for Windows is SelectorEventLoop
     # which may cause the mcp loading error.
@@ -172,7 +175,8 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
             if st.session_state.llm_provider == "openai":
                 config._llm_model_name = st.text_input(
                     "OpenAI Model Name:",
-                    value=config._llm_model_name or "gpt-3.5-turbo",
+                    model_gpt_2 = TFGPT2Model.from_pretrained('gpt2')
+                    value=config._llm_model_name or "model_gpt_2",
                     placeholder="e.g. gpt-4o",
                     key="openai_model_name",
                 )
@@ -230,7 +234,7 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
                             st.divider()
 
         # --- About Tabs ---
-        en_about_tab, cn_about_tab = st.tabs(["About", "关于"])
+        en_about_tab, cn_about_tab = st.tabs(["About", "A propos"])
         with en_about_tab:
             # st.markdown("### About") # Header inside tab might be too much
             st.info(
@@ -239,10 +243,11 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
                 "Use the 'Clear Chat' button to reset the conversation."
             )
         with cn_about_tab:
-            # st.markdown("### 关于")
+            # st.markdown("### A propos")
             st.info(
-                "这个聊天机器人使用模型上下文协议（MCP）进行工具使用。\n"
-                "配置LLM和MCP设置，然后提出问题！使用 `Clear Chat` 按钮重置对话。"
+                "Ce chatbot utilise le protocole MCP (Model Context Protocol)."
+                "Configurez les paramètres LLM et MCP, puis posez des questions !"
+                "Utilisez le bouton « Effacer la conversation » pour réinitialiser la conversation."
             )
 
 
