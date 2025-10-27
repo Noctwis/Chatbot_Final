@@ -89,9 +89,9 @@ This project includes:
    - Edit the `.env` file to add your Qwen API key (just for demo, you can use any LLM API key, remember to set the base_url and api_key in the .env file) and set the paths:
 
      ```
-     LLM_MODEL_NAME=your_llm_model_name_here
+     LLM_MODEL_NAME=GPT2Model.from_pretrained('gpt2')
      LLM_BASE_URL=your_llm_base_url_here
-     LLM_API_KEY=your_llm_api_key_here
+     LLM_API_KEY=
      OLLAMA_MODEL_NAME=your_ollama_model_name_here
      OLLAMA_BASE_URL=your_ollama_base_url_here
      MARKDOWN_FOLDER_PATH=/path/to/your/markdown/folder
