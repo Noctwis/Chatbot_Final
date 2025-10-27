@@ -12,9 +12,6 @@ import streamlit as st
 from transformers import GPT2Tokenizer, TFGPT2Model
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
-from transformers import GPT2Tokenizer, TFGPT2Model
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-
 if sys.platform == "win32":
     # The default event loop policy for Windows is SelectorEventLoop
     # which may cause the mcp loading error.
@@ -179,8 +176,6 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
                 config._llm_model_name = st.text_input(
                     "OpenAI Model Name:",
                     model_gpt_2 = TFGPT2Model.from_pretrained('gpt2')
-                    value=config._llm_model_name or "model_gpt_2",
-                    model_gpt_2 = TFGPT2Model.from_pretrained('gpt2')
                     #value=config._llm_model_name or "model_gpt_2",
                     value=model_gpt_2
                     placeholder="e.g. gpt-4o",
@@ -241,7 +236,6 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
 
         # --- About Tabs ---
         en_about_tab, cn_about_tab = st.tabs(["About", "A propos"])
-        en_about_tab, cn_about_tab = st.tabs(["About", "A propos"])
         with en_about_tab:
             # st.markdown("### About") # Header inside tab might be too much
             st.info(
@@ -251,11 +245,7 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
             )
         with cn_about_tab:
             # st.markdown("### A propos")
-            # st.markdown("### A propos")
             st.info(
-                "Ce chatbot utilise le protocole MCP (Model Context Protocol)."
-                "Configurez les paramètres LLM et MCP, puis posez des questions !"
-                "Utilisez le bouton « Effacer la conversation » pour réinitialiser la conversation."
                 "Ce chatbot utilise le protocole MCP (Model Context Protocol)."
                 "Configurez les paramètres LLM et MCP, puis posez des questions !"
                 "Utilisez le bouton « Effacer la conversation » pour réinitialiser la conversation."
