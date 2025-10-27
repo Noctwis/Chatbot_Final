@@ -9,9 +9,9 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import streamlit as st
 
-from transformers import GPT2Tokenizer, TFGPT2Model
+from transformers import GPT2Tokenizer, GPT2Model
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model_gpt_2 = TFGPT2Model.from_pretrained('gpt2'),
+model = GPT2Model.from_pretrained('gpt2')
 
 
 if sys.platform == "win32":
