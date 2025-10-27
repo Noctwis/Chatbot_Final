@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import streamlit as st
 
 from transformers import GPT2Tokenizer, TFGPT2Model
-#tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
 
 if sys.platform == "win32":
