@@ -11,6 +11,7 @@ import streamlit as st
 
 from transformers import GPT2Tokenizer, TFGPT2Model
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+model_gpt_2 = TFGPT2Model.from_pretrained('gpt2'),
 
 
 if sys.platform == "win32":
@@ -176,7 +177,6 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
             if st.session_state.llm_provider == "openai":
                 config._llm_model_name = st.text_input(
                     "OpenAI Model Name:",
-                    model_gpt_2 = TFGPT2Model.from_pretrained('gpt2'),
                     value=config._llm_model_name or "gpt-3.5-turbo",
                     #value=model_gpt_2,
                     placeholder="e.g. gpt-4o",
