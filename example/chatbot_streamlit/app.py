@@ -178,7 +178,7 @@ def render_sidebar(mcp_tools: Optional[Dict[str, List[MCPTool]]] = None):
                     "OpenAI Model Name:",
                     model_gpt_2 = TFGPT2Model.from_pretrained('gpt2'),
                     #value=config._llm_model_name or "model_gpt_2",
-                    value=model_gpt_2
+                    value=model_gpt_2,
                     placeholder="e.g. gpt-4o",
                     key="openai_model_name",
                 )
